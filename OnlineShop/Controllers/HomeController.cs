@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Models;
+using OnlineShop.Repositories;
 
 namespace OnlineShop.Controllers
 {
@@ -13,9 +14,17 @@ namespace OnlineShop.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public string Index()
         {
-            return View();
+            var products = ProductsRepository.GetAll();
+            string result = string.Empty;
+
+            foreach (var product in products)
+            {
+                result += product + Environment.NewLine + Environment.NewLine;
+            }
+
+            return result;
         }
 
         public IActionResult Privacy()
