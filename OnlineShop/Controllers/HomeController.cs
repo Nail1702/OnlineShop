@@ -14,17 +14,11 @@ namespace OnlineShop.Controllers
             _logger = logger;
         }
 
-        public string Index()
+        public IActionResult Index()
         {
             var products = ProductsRepository.GetAll();
-            string result = string.Empty;
 
-            foreach (var product in products)
-            {
-                result += product + Environment.NewLine + Environment.NewLine;
-            }
-
-            return result;
+            return View(products);
         }
 
         public IActionResult Privacy()
