@@ -2,7 +2,7 @@
 
 namespace OnlineShop.Repositories
 {
-    public class ProductsRepository
+    public static class ProductsRepository
     {
         private static int _instanceCounter = 0;
         private static readonly List<Product> _products =
