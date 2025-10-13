@@ -4,11 +4,11 @@ namespace OnlineShop.Repositories
 {
     public static class CartsRepository
     {
-        private static readonly List<Cart> carts = [];
+        private static readonly List<Cart> _carts = [];
 
         public static Cart? TryGetByUserId(string userId)
         {
-            return carts.FirstOrDefault(cart =>  cart.UserId == userId);
+            return _carts.FirstOrDefault(cart => cart.UserId == userId);
         }
 
         public static void Add(Product product, string userId)
@@ -22,16 +22,16 @@ namespace OnlineShop.Repositories
                     Id = Guid.NewGuid(),
                     UserId = userId,
                     Items = new List<CartItem>()
-            {
-                new CartItem()
-                {
-                    Id = Guid.NewGuid(),
-                    Product = product,
-                    Quantity = 1
-                }
-            }
+                    {
+                        new CartItem()
+                        {
+                            Id = Guid.NewGuid(),
+                            Product = product,
+                            Quantity = 1
+                        }
+                    }
                 };
-                carts.Add(existingCart);
+                _carts.Add(existingCart);
             }
             else
             {

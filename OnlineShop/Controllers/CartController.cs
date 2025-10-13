@@ -1,14 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OnlineShop;
 using OnlineShop.Repositories;
 
-namespace OnlineShop.Controllers
+namespace OnlineShopWebApp.Controllers
 {
     public class CartController : Controller
     {
         public IActionResult Index()
         {
-            return View();
+            var cart = CartsRepository.TryGetByUserId(Constants.UserId);
+
+            return View(cart);
         }
+
         public IActionResult Add(int productId)
         {
             var product = ProductsRepository.TryGetById(productId);
