@@ -1,14 +1,15 @@
-﻿using OnlineShop.Models;
+﻿using OnlineShop.Interfaces;
+using OnlineShop.Models;
 
 namespace OnlineShop.Repositories
 {
-    public class ProductsRepository
+    public class InMemoryProductsRepository : IProductsRepository
     {
         private int _instanceCounter = 0;
 
         private readonly List<Product> _products;
 
-        public ProductsRepository()
+        public InMemoryProductsRepository()
         {
             _products =
             [

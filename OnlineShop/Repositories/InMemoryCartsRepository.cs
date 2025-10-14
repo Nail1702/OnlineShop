@@ -1,8 +1,9 @@
-﻿using OnlineShop.Models;
+﻿using OnlineShop.Interfaces;
+using OnlineShop.Models;
 
 namespace OnlineShop.Repositories
 {
-    public class CartsRepository
+    public class InMemoryCartsRepository : ICartsRepository
     {
         private readonly List<Cart> _carts = [];
 

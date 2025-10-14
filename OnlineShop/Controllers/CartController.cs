@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using OnlineShop;
-using OnlineShop.Repositories;
+using OnlineShop.Interfaces;
 
-namespace OnlineShopWebApp.Controllers
+namespace OnlineShop.Controllers
 {
     public class CartController : Controller
     {
-        private readonly ProductsRepository _productsRepository;
-        private readonly CartsRepository _cartsRepository;
+        private readonly IProductsRepository _productsRepository;
+        private readonly ICartsRepository _cartsRepository;
 
-        public CartController(ProductsRepository productsRepository, CartsRepository cartsRepository)
+        public CartController(IProductsRepository productsRepository, ICartsRepository cartsRepository)
         {
             _productsRepository = productsRepository;
             _cartsRepository = cartsRepository;

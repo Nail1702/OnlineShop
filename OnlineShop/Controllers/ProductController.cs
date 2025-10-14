@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShop.Models;
-using OnlineShop.Repositories;
+using OnlineShop.Interfaces;
 
 namespace OnlineShop.Controllers
 {
     public class ProductController : Controller
     {
-        private readonly ProductsRepository _productsRepository;
+        private readonly IProductsRepository _productsRepository;
 
-        public ProductController(ProductsRepository productsRepository)
+        public ProductController(IProductsRepository productsRepository)
         {
             _productsRepository = productsRepository;
         }

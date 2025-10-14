@@ -1,11 +1,13 @@
 using OnlineShop.Repositories;
+using OnlineShop.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<ProductsRepository>();
-builder.Services.AddSingleton<CartsRepository>();
+
+builder.Services.AddSingleton<IProductsRepository, InMemoryProductsRepository>();
+builder.Services.AddSingleton<ICartsRepository, InMemoryCartsRepository>();
 
 var app = builder.Build();
 
