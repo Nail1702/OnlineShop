@@ -23,6 +23,12 @@
                            asp-route-productId="@product.Id">
                             Добавить в корзину
                         </a>
+                        <a class="btn btn-outline-secondary mt-3"
+                           asp-controller="Favorite"
+                           asp-action="Add"
+                           asp-route-productId="@product.Id">
+                            Добавить в избранное
+                        </a>
                     </div>
                 </div>
             </div>
