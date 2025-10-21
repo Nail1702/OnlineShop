@@ -9,6 +9,9 @@ namespace OnlineShop.Repositories
 
         public void Add(Order order)
         {
+            order.CreationDateTime = DateTime.Now;
+            order.DeliveryUser.Id = Guid.NewGuid();
+
             order.Id = Guid.NewGuid();
 
             _orders.Add(order);
