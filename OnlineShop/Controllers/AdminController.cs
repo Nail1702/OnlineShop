@@ -11,7 +11,7 @@ namespace OnlineShop.Controllers
 
         public IActionResult Products()
         {
-            return View();
+            return View("Products");
         }
 
         public IActionResult Roles()
