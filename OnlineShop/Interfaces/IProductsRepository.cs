@@ -8,6 +8,6 @@ namespace OnlineShop.Interfaces
         Product? TryGetById(int productId);
         void Add(Product product);
         void Update(Product product);
-        void Delete(Product product);
+        void Delete(int productId);
     }
 }

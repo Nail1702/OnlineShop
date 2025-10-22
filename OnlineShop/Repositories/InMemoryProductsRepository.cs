@@ -25,5 +25,32 @@ namespace OnlineShop.Repositories
 
         public Product? TryGetById(int productId) =>
             _products.FirstOrDefault(product => product.Id == productId);
+
+        public void Add(Product product)
+        {
+            product.Id = ++_instanceCounter;
+
+            _products.Add(product);
+        }
+        public void Update(Product product)
+        {
+            var existingProduct = TryGetById(product.Id);
+
+            if (existingProduct != null)
+            {
+                existingProduct.Name = product.Name;
+                existingProduct.Cost = product.Cost;
+                existingProduct.Description = product.Description;
+            }
+        }
+        public void Delete(int productId)
+        {
+            var existingProduct = TryGetById(productId);
+
+            if (existingProduct != null)
+            {
+                _products.Remove(existingProduct);
+            }
+        }
     }
 }

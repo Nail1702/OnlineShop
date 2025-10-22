@@ -2,11 +2,14 @@
 {
     public class Product
     {
-        public int Id { get; }
-        public string Name { get; }
-        public decimal Cost { get; }
-        public string? Description { get; }
-        public string? PhotoPath { get; } = "img/anyProduct.png";
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public decimal Cost { get; set; }
+        public string? Description { get; set; }
+        public string? PhotoPath { get; set; } = "/img/anyProduct.png";
+
+        public Product()
+        { }
 
         public Product(int id, string name, decimal cost, string? description)
         {
@@ -14,11 +17,6 @@
             Name = name;
             Cost = cost;
             Description = description;
-        }
-
-        public override string ToString()
-        {
-            return $"{Id}{Environment.NewLine}{Name}{Environment.NewLine}{Cost:c}";
         }
     }
 }
