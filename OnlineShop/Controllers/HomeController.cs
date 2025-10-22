@@ -18,5 +18,16 @@ namespace OnlineShop.Controllers
 
             return View(products);
         }
+        public IActionResult Search(string query)
+        {
+            if (query == null)
+            {
+                return View();
+            }
+
+            var products = _productsRepository.Search(query);
+
+            return View(products);
+        }
     }
 }

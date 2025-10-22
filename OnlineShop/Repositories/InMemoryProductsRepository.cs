@@ -1,5 +1,6 @@
 ﻿using OnlineShop.Interfaces;
 using OnlineShop.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace OnlineShop.Repositories
 {
@@ -51,6 +52,12 @@ namespace OnlineShop.Repositories
             {
                 _products.Remove(existingProduct);
             }
+        }
+        public List<Product> Search(string text)
+        {
+            var products = GetAll().Where(product => product.Name!.Contains(text, StringComparison.OrdinalIgnoreCase));
+
+            return products.ToList() ?? [];
         }
     }
 }
