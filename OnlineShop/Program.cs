@@ -1,5 +1,6 @@
 using OnlineShop.Repositories;
 using OnlineShop.Interfaces;
+using OnlineShopWebApp.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddSingleton<IProductsRepository, InMemoryProductsRepository>()
 builder.Services.AddSingleton<ICartsRepository, InMemoryCartsRepository>();
 builder.Services.AddSingleton<IOrdersRepository, InMemoryOrdersRepository>();
 builder.Services.AddSingleton<IFavoritesRepository, InMemoryFavoritesRepository>();
+builder.Services.AddSingleton<IComparisonsRepository, InMemoryComparisonsRepository>();
 
 var app = builder.Build();
 
