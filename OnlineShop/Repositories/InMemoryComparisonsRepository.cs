@@ -1,8 +1,7 @@
 ﻿using OnlineShop.Interfaces;
 using OnlineShop.Models;
-using System.Xml.Linq;
 
-namespace OnlineShopWebApp.Repositories
+namespace OnlineShop.Repositories
 {
     public class InMemoryComparisonsRepository : IComparisonsRepository
     {
