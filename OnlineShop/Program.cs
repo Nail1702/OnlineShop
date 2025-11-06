@@ -34,6 +34,7 @@ namespace OnlineShop
                 builder.Services.AddSingleton<IFavoritesRepository, InMemoryFavoritesRepository>();
                 builder.Services.AddSingleton<IComparisonsRepository, InMemoryComparisonsRepository>();
                 builder.Services.AddSingleton<IRolesRepository, InMemoryRolesRepository>();
+                builder.Services.AddSingleton<IUsersRepository, InMemoryUsersRepository>();
                 builder.Services.Configure<RequestLocalizationOptions>(options =>
                 {
                     var supportedCultures = new[]
